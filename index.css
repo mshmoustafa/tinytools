@@ -1,3 +1,163 @@
 html {
-  background-color: #3477eb
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: #00ff00;
+  height: 100vh;
+  width: 100vw;
+  font-family: monospace;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-height: 100vh;
+  min-height: 100vh;
+}
+
+.screen {
+  display: none;
+
+}
+
+.visible {
+  box-sizing: border-box;
+  display: flex;
+  /* background-color: white; */
+  /* background-color: rgba(255, 255, 255, 0.239); */
+  /* backdrop-filter: blur(10px); */
+  /* border-radius: 20px; */
+  flex-flow: row wrap;
+  justify-content: left;
+  align-items: self-start;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  max-height: 80vh;
+  min-height: 80vh;
+  min-width: 80vw;
+  max-width: 80vw;
+  overflow-y: scroll;
+  /* padding: 20px; */
+}
+
+.app {
+  box-sizing: border-box;
+  display: flex;
+  /* background-color: black; */
+  border: 3px solid #00ff00;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  padding: 15px;
+  /* font-family: sans-serif; */
+  /* border-radius: 20px; */
+}
+
+.app>* {
+  color: #00ff00
+}
+
+a {
+  text-decoration: none;
+}
+
+#screenMain {
+  background-color: initial;
+}
+
+#navBack {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #00ff00;
+  text-decoration: none;
+  border: 1px solid #00ff00;
+  /* background-color: rgba(255, 255, 255, 0.621); */
+  backdrop-filter: blur(10px);
+  padding: 3px;
+  /* font-family: sans-serif; */
+  font-size: 10pt;
+  padding-left: 5px;
+  padding-right: 5px;
+  /* border-radius: 5px; */
+}
+
+#navBack.show {
+  display: initial;
+}
+
+#titleBar {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: rgba(255, 255, 255, 0.346); */
+  backdrop-filter: blur(10px);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #00ff00;
+  /* font-family: sans-serif; */
+  color: #00ff00;
+  font-size: 15pt;
+}
+
+.blueBackground {
+  background-color: #0000ffa6;
+  backdrop-filter: blur(10px);
+}
+
+.redBackground {
+  background-image: linear-gradient(335deg,
+      hsl(0deg 95% 64%) 0%,
+      hsl(352deg 84% 59%) 11%,
+      hsl(346deg 74% 54%) 22%,
+      hsl(340deg 65% 50%) 33%,
+      hsl(335deg 65% 46%) 44%,
+      hsl(329deg 64% 42%) 56%,
+      hsl(324deg 60% 38%) 67%,
+      hsl(316deg 55% 35%) 78%,
+      hsl(307deg 49% 31%) 89%,
+      hsl(293deg 44% 28%) 100%);
+  /* backdrop-filter: blur(10px); */
+}
+
+.pinkBackground {
+  background-image: linear-gradient(
+  335deg,
+  hsl(0deg 100% 76%) 0%,
+  hsl(353deg 100% 73%) 11%,
+  hsl(346deg 100% 71%) 22%,
+  hsl(340deg 100% 68%) 33%,
+  hsl(333deg 100% 66%) 44%,
+  hsl(327deg 100% 63%) 56%,
+  hsl(321deg 100% 61%) 67%,
+  hsl(314deg 92% 58%) 78%,
+  hsl(305deg 82% 55%) 89%,
+  hsl(294deg 82% 56%) 100%
+);
+}
+
+textarea {
+  background-color: black;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  height: 10em;
+  width: 100%;
+}
+
+button {
+  background-color: black;
+  border: 1px solid #00ff00;
+  color: #00ff00;
 }

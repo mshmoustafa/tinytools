@@ -24,7 +24,7 @@ function showScreen(screenToShow) {
   screenToShow.classList.add("visible");
 }
 
-window.addEventListener("hashchange", (ev) => {
+window.addEventListener("hashchange", () => {
   navigate();
 });
 

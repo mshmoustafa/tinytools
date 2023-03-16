@@ -67,7 +67,7 @@ a {
   min-width: 80vw;
 }
 
-#screenBase64.visible {
+#screenBase64.visible, #screenTimestamp.visible {
   background-color: initial;
   box-sizing: border-box;
   display: block;
@@ -127,9 +127,20 @@ button {
   font-family: monospace;
   padding-left: 10px;
   padding-right: 10px;
-  ;
   margin-right: 5px;
-  ;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+button:hover, textarea:hover, input:hover, .app:hover, #navBack:hover {
+  border-style: dashed;
+}
+
+input {
+  background-color: black;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-family: monospace;
+  width: 100%;
+  border-radius: 0;
 }

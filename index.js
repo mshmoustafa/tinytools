@@ -6,14 +6,7 @@ const navs = {
 const screens = {
   main: document.getElementById("screenMain"),
   base64: document.getElementById("screenBase64"),
-}
-
-const base64Screen = {
-  encodeButton: document.getElementById("base64Encode"),
-    decodeButton: document.getElementById("base64Decode"),
-    copyButton: document.getElementById("base64Copy"),
-    base64Input: document.getElementById("base64Input"),
-    base64Output: document.getElementById("base64Output"),
+  timestamp: document.getElementById("screenTimestamp"),
 }
 
 function showScreen(screenToShow) {
@@ -29,32 +22,56 @@ window.addEventListener("hashchange", () => {
 });
 
 function navigate() {
-  if (window.location.hash === '#base64') {
-    showScreen(screens.base64);
-  } else if (window.location.hash === '#main') {
+  const hash = window.location.hash;
+  if (hash === null || hash === "") {
     showScreen(screens.main);
-  } else {
-    showScreen(screens.main);
-  }
-
-  if (window.location.hash !== "") {
-    navs.back.classList.add("show")
-  } else {
     navs.back.classList.remove("show")
+  } else {
+    const screen = hash.substring(1);
+    showScreen(screens[screen]);
+    navs.back.classList.add("show")
   }
 }
 
 function setupBase64Screen() {
-  base64Screen.encodeButton.onclick = (event) => {
+  const encodeButton = document.getElementById("base64Encode");
+  const decodeButton = document.getElementById("base64Decode");
+  const copyButton = document.getElementById("base64Copy");
+  const base64Input = document.getElementById("base64Input");
+  const base64Output = document.getElementById("base64Output");
+
+  encodeButton.onclick = () => {
     base64Output.value = btoa(base64Input.value);
   }
-  base64Screen.decodeButton.onclick = (event) => {
+  decodeButton.onclick = () => {
     base64Output.value = atob(base64Input.value);
   }
-  base64Screen.copyButton.onclick = (event) => {
+  copyButton.onclick = () => {
     navigator.clipboard.writeText(base64Output.value);
+  }
+}
+
+function setupTimestampScreen() {
+  const timestampInput = document.getElementById("timestampInput");
+  const timestampConvertButton = document.getElementById("timestampConvert");
+  const timestampOutput = document.getElementById("timestampOutput");
+
+  timestampInput.value = new Date().getTime();
+
+  timestampConvertButton.onclick = () => {
+    const timestamp = Number(timestampInput.value);
+    let date;
+    // debugger;
+    if (timestamp > 1000000000000000) {
+      date = new Date(timestamp / 1000);
+    } else {
+      date = new Date(timestamp);
+    }
+
+    timestampOutput.innerText = date.toLocaleString();
   }
 }
 
 navigate();
 setupBase64Screen();
+setupTimestampScreen();

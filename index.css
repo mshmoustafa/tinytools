@@ -21,21 +21,13 @@ body {
 
 .screen {
   display: none;
-}
-
-.visible {
   box-sizing: border-box;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: left;
-  align-items: self-start;
-  text-align: center;
-  margin-top: 50px;
+  padding-top: 50pt;
   margin-bottom: 10px;
-  max-height: 80vh;
-  min-height: 80vh;
-  min-width: 80vw;
-  max-width: 80vw;
+  max-height: 100vh;
+  min-height: 100vh;
+  /* min-width: 10px; */
+  /* max-width: 900px; */
   overflow-y: scroll;
 }
 
@@ -63,8 +55,25 @@ a {
   text-decoration: none;
 }
 
-#screenMain {
+#screenMain.visible {
   background-color: initial;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  align-items: self-start;
+  text-align: center;
+  max-width: 80vw;
+  min-width: 80vw;
+}
+
+#screenBase64.visible {
+  background-color: initial;
+  box-sizing: border-box;
+  display: block;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #navBack {
@@ -103,6 +112,7 @@ a {
 
 textarea {
   background-color: black;
+  box-sizing: border-box;
   border: 1px solid #00ff00;
   color: #00ff00;
   height: 10em;

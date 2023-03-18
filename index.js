@@ -1,7 +1,4 @@
-const navs = {
-  base64: document.getElementById("navBase64"),
-  back: document.getElementById("navBack"),
-}
+const back = document.getElementById("navBack");
 
 const screens = {
   main: document.getElementById("screenMain"),
@@ -25,11 +22,11 @@ function navigate() {
   const hash = window.location.hash;
   if (hash === null || hash === "") {
     showScreen(screens.main);
-    navs.back.classList.remove("show")
+    back.classList.remove("show")
   } else {
     const screen = hash.substring(1);
     showScreen(screens[screen]);
-    navs.back.classList.add("show")
+    back.classList.add("show")
   }
 }
 
@@ -61,7 +58,6 @@ function setupTimestampScreen() {
   timestampConvertButton.onclick = () => {
     const timestamp = Number(timestampInput.value);
     let date;
-    // debugger;
     if (timestamp > 1000000000000000) {
       date = new Date(timestamp / 1000);
     } else {

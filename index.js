@@ -1,10 +1,11 @@
-const back = document.getElementById("navBack");
+const id = (id) => document.getElementById(id);
+const back = id("navBack");
 
 const screens = {
-  home: document.getElementById("screenHome"),
-  base64: document.getElementById("screenBase64"),
-  timestamp: document.getElementById("screenTimestamp"),
-  characterCount: document.getElementById("screenCharacterCount"),
+  home: id("screenHome"),
+  base64: id("screenBase64"),
+  timestamp: id("screenTimestamp"),
+  characterCount: id("screenCharacterCount"),
 }
 
 function showScreen(screenToShow) {
@@ -32,11 +33,11 @@ function navigate() {
 }
 
 function setupBase64Screen() {
-  const encodeButton = document.getElementById("base64Encode");
-  const decodeButton = document.getElementById("base64Decode");
-  const copyButton = document.getElementById("base64Copy");
-  const base64Input = document.getElementById("base64Input");
-  const base64Output = document.getElementById("base64Output");
+  const encodeButton = id("base64Encode");
+  const decodeButton = id("base64Decode");
+  const copyButton = id("base64Copy");
+  const base64Input = id("base64Input");
+  const base64Output = id("base64Output");
 
   encodeButton.onclick = () => {
     base64Output.value = btoa(base64Input.value);
@@ -50,9 +51,9 @@ function setupBase64Screen() {
 }
 
 function setupTimestampScreen() {
-  const timestampInput = document.getElementById("timestampInput");
-  const timestampConvertButton = document.getElementById("timestampConvert");
-  const timestampOutput = document.getElementById("timestampOutput");
+  const timestampInput = id("timestampInput");
+  const timestampConvertButton = id("timestampConvert");
+  const timestampOutput = id("timestampOutput");
 
   timestampInput.value = new Date().getTime();
 
@@ -70,11 +71,11 @@ function setupTimestampScreen() {
 }
 
 function setupCharacterCountScreen() {
-  const characterCountInput = document.getElementById("characterCountInput");
-  const characterCountOutput = document.getElementById("characterCountOutput");
-  const wordCountOutput = document.getElementById("wordCountOutput");
-  const lineCountOutput = document.getElementById("lineCountOutput");
-  const sizeCountOutput = document.getElementById("sizeCountOutput");
+  const characterCountInput = id("characterCountInput");
+  const characterCountOutput = id("characterCountOutput");
+  const wordCountOutput = id("wordCountOutput");
+  const lineCountOutput = id("lineCountOutput");
+  const sizeCountOutput = id("sizeCountOutput");
 
   const count = () => {
     const input = characterCountInput.value;

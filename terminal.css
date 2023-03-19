@@ -1,0 +1,49 @@
+html {
+  background-color: black;
+  color: #00ff00;
+  font-family: monospace;
+}
+
+.app {
+  background-color: black;
+  border: 3px solid #00ff00;
+}
+
+.app>* {
+  color: #00ff00;
+}
+
+#navBack {
+  color: #00ff00;
+  border: 1px solid #00ff00;
+}
+
+#titleBar {
+  background-color: black;
+  border-bottom: 1px solid #00ff00;
+  color: #00ff00;
+}
+
+textarea {
+  background-color: black;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+}
+
+button {
+  background-color: black;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-family: monospace;
+}
+
+button:hover, textarea:hover, input:hover, .app:hover, #navBack:hover {
+  border-style: dashed;
+}
+
+input {
+  background-color: black;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-family: monospace;
+}

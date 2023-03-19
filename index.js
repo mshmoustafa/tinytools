@@ -7,6 +7,7 @@ const screens = {
   timestamp: id("screenTimestamp"),
   characterCount: id("screenCharacterCount"),
   findReplace: id("screenFindReplace"),
+  jsonFormat: id("screenJsonFormat")
 }
 
 function showScreen(screenToShow) {

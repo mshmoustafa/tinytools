@@ -3,4 +3,4 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/mshmoustafa/tinytools?style=plastic)
 
 # tinytools
-A collection of tiny tools to use in your browser
+A collection of tiny tools to use in your [browser](https://mshmoustafa.github.io/tinytools/) 🌐.

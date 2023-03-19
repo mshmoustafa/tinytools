@@ -9,24 +9,26 @@
 <body>
   <h1 id="titleBar">Tiny Tools</h1>
   <a href="#" id="navBack">Back</a>
-  <div id="screenMain" class="screen visible">
-    <div class="app"><a href="#base64" id="navBase64">Base64 Decode and Encode</a></div>
-    <div class="app"><a href="#timestamp" id="navTimestamp">Unix Epoch Timestamp Converter</a></div>
-    <div class="app"><a href="#characterCount" id="navCharacterCount">Character and Line Count</a></div>
+  <div id="screenHome" class="screen">
+    <div id="apps">
+      <div class="app"><a href="#base64" id="navBase64">Base64 Decode and Encode</a></div>
+      <div class="app"><a href="#timestamp" id="navTimestamp">Unix Epoch Timestamp Converter</a></div>
+      <div class="app"><a href="#characterCount" id="navCharacterCount">Character and Line Count</a></div>
+    </div>
   </div>
-  <div id="screenBase64" class="screen">
+  <div id="screenBase64" class="screen hidden">
     <textarea id="base64Input"><Enter text here></textarea>
     <button id="base64Encode">Encode</button>
     <button id="base64Decode">Decode</button>
     <textarea id="base64Output"></textarea>
     <button id="base64Copy">Copy</button>
   </div>
-  <div id="screenTimestamp" class="screen">
+  <div id="screenTimestamp" class="screen hidden">
     <input type="number" id="timestampInput" />
     <button id="timestampConvert">Convert</button>
     <div id="timestampOutput"></div>
   </div>
-  <div id="screenCharacterCount" class="screen">
+  <div id="screenCharacterCount" class="screen hidden">
     <textarea id="characterCountInput"></textarea>
     <div id="characterCountOutput"></div>
     <div id="wordCountOutput"></div>

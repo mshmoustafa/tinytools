@@ -1,7 +1,7 @@
 const back = document.getElementById("navBack");
 
 const screens = {
-  main: document.getElementById("screenMain"),
+  home: document.getElementById("screenHome"),
   base64: document.getElementById("screenBase64"),
   timestamp: document.getElementById("screenTimestamp"),
   characterCount: document.getElementById("screenCharacterCount"),
@@ -10,9 +10,9 @@ const screens = {
 function showScreen(screenToShow) {
   const screens = document.getElementsByClassName("screen");
   for (let screen of screens) {
-    screen.classList.remove("visible");
+    screen.classList.add("hidden");
   }
-  screenToShow.classList.add("visible");
+  screenToShow.classList.remove("hidden");
 }
 
 window.addEventListener("hashchange", () => {
@@ -22,7 +22,7 @@ window.addEventListener("hashchange", () => {
 function navigate() {
   const hash = window.location.hash;
   if (hash === null || hash === "") {
-    showScreen(screens.main);
+    showScreen(screens.home);
     back.classList.remove("show")
   } else {
     const screen = hash.substring(1);

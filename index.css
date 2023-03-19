@@ -65,7 +65,7 @@ a {
   min-width: 80vw;
 }
 
-#screenBase64.visible, #screenTimestamp.visible {
+#screenBase64.visible, #screenTimestamp.visible, #screenCharacterCount.visible {
   background-color: initial;
   box-sizing: border-box;
   display: block;

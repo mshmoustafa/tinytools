@@ -4,6 +4,7 @@ const screens = {
   main: document.getElementById("screenMain"),
   base64: document.getElementById("screenBase64"),
   timestamp: document.getElementById("screenTimestamp"),
+  characterCount: document.getElementById("screenCharacterCount"),
 }
 
 function showScreen(screenToShow) {
@@ -68,6 +69,33 @@ function setupTimestampScreen() {
   }
 }
 
-navigate();
+function setupCharacterCountScreen() {
+  const characterCountInput = document.getElementById("characterCountInput");
+  const characterCountOutput = document.getElementById("characterCountOutput");
+  const wordCountOutput = document.getElementById("wordCountOutput");
+  const lineCountOutput = document.getElementById("lineCountOutput");
+  const sizeCountOutput = document.getElementById("sizeCountOutput");
+
+  const count = () => {
+    const input = characterCountInput.value;
+    if (input === "") {
+      characterCountOutput.innerText = `0 character(s)`;
+      wordCountOutput.innerText = `0 word(s)`;
+      lineCountOutput.innerText = `0 line(s)`;
+      sizeCountOutput.innerText = `0 byte(s)`;
+      return;
+    } else {
+      characterCountOutput.innerText = `${input.length} character(s)`;
+      wordCountOutput.innerText = `${input.split(" ").length} word(s)`;
+      lineCountOutput.innerText = `${input.split("\n").length} line(s)`;
+      sizeCountOutput.innerText = `${(new TextEncoder().encode(input)).length} byte(s)`;
+    }
+  };
+  characterCountInput.onkeyup = count;
+  count();
+}
+
 setupBase64Screen();
 setupTimestampScreen();
+setupCharacterCountScreen();
+navigate();

@@ -12,6 +12,7 @@
   <div id="screenMain" class="screen visible">
     <div class="app"><a href="#base64" id="navBase64">Base64 Decode and Encode</a></div>
     <div class="app"><a href="#timestamp" id="navTimestamp">Unix Epoch Timestamp Converter</a></div>
+    <div class="app"><a href="#characterCount" id="navCharacterCount">Character and Line Count</a></div>
   </div>
   <div id="screenBase64" class="screen">
     <textarea id="base64Input"><Enter text here></textarea>
@@ -24,6 +25,13 @@
     <input type="number" id="timestampInput" />
     <button id="timestampConvert">Convert</button>
     <div id="timestampOutput"></div>
+  </div>
+  <div id="screenCharacterCount" class="screen">
+    <textarea id="characterCountInput"></textarea>
+    <div id="characterCountOutput"></div>
+    <div id="wordCountOutput"></div>
+    <div id="lineCountOutput"></div>
+    <div id="sizeCountOutput"></div>
   </div>
   <script src="index.js"></script>
 </body>

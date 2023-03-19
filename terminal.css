@@ -28,6 +28,7 @@ textarea {
   background-color: black;
   border: 1px solid #00ff00;
   color: #00ff00;
+  border-radius: 0;
 }
 
 button {
@@ -35,6 +36,7 @@ button {
   border: 1px solid #00ff00;
   color: #00ff00;
   font-family: monospace;
+  border-radius: 0;
 }
 
 button:hover, textarea:hover, input:hover, .app:hover, #navBack:hover {
@@ -46,6 +48,7 @@ input {
   border: 1px solid #00ff00;
   color: #00ff00;
   font-family: monospace;
+  border-radius: 0;
 }
 
 .match {

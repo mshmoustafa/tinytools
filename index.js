@@ -94,7 +94,7 @@ function setupCharacterCountScreen() {
       sizeCountOutput.innerText = `${(new TextEncoder().encode(input)).length} byte(s)`;
     }
   };
-  characterCountInput.onkeyup = count;
+  characterCountInput.oninput = count;
   count();
 }
 
@@ -140,7 +140,6 @@ function setupFindReplaceScreen() {
   }
 
   replaceButton.onclick = () => {
-    // debugger;
     result.innerHTML = "";
     metrics.innerHTML = "";
 

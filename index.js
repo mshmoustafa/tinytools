@@ -147,10 +147,6 @@ function setupFindReplaceScreen() {
   copy.onclick = () => {
     navigator.clipboard.writeText(result.innerText);
   }
-
-  original.value = "Hello";
-  findString.value = "l";
-  replaceWith.value = "x";
 }
 
 setupBase64Screen();

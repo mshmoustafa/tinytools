@@ -125,6 +125,12 @@ function setupFindReplaceScreen() {
     result.innerHTML = "";
     metrics.innerHTML = "";
 
+    if (findString.value === "") {
+      metrics.innerText = `Found 0 match(es)`;
+      result.innerText = original.value;
+      return;
+    }
+
     const split = original.value.split(findString.value);
 
     highlightMatches(split, findString.value, result);
@@ -137,9 +143,15 @@ function setupFindReplaceScreen() {
     result.innerHTML = "";
     metrics.innerHTML = "";
 
+    if (findString.value === "") {
+      metrics.innerText = `Replaced 0 match(es)`;
+      result.innerText = original.value;
+      return;
+    }
+
     const replaced = original.value.split(findString.value).join(replaceWith.value);
 
-    highlightMatches(replaced.split(replaceWith.value), replaceWith.value, result);
+    highlightMatches(original.value.split(findString.value), replaceWith.value, result);
 
     metrics.innerText = `Replaced ${original.value.split(findString.value).length - 1} match(es)`;
   }

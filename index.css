@@ -44,6 +44,7 @@ body {
   height: 100px;
   width: 100px;
   margin: 10px;
+  vertical-align: middle;
 }
 
 .app>* {
@@ -110,4 +111,20 @@ button {
 
 input {
   width: 100%;
+}
+
+.spacer {
+  padding: 0.25em;
+}
+
+#findReplaceResult {
+  font-family: monospace;
+  white-space: pre;
+  padding: 0.1em;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+#findReplaceResult>* {
+  padding: 0;
 }

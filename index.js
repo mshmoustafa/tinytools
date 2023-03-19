@@ -6,6 +6,7 @@ const screens = {
   base64: id("screenBase64"),
   timestamp: id("screenTimestamp"),
   characterCount: id("screenCharacterCount"),
+  findReplace: id("screenFindReplace"),
 }
 
 function showScreen(screenToShow) {
@@ -96,7 +97,64 @@ function setupCharacterCountScreen() {
   count();
 }
 
+function setupFindReplaceScreen() {
+  const original = id("findReplaceOriginal");
+  const findString = id("findReplaceFind");
+  const replaceWith = id("findReplaceReplace");
+  const findButton = id("findReplaceFindButton");
+  const replaceButton = id("findReplaceReplaceButton");
+  const result = id("findReplaceResult");
+  const metrics = id("findReplaceMetrics");
+  const copy = id("findReplaceCopyButton");
+
+  const highlightMatches = (list, find, element) => {
+    for (let i = 0; i < list.length; i++) {
+      const str = list[i];
+      const el = document.createElement("span");
+      el.innerText = str;
+      element.appendChild(el);
+      if (i >= list.length - 1) break;
+      const match = document.createElement("span");
+      match.classList.add("match");
+      match.innerText = find;
+      element.appendChild(match);
+    }
+  }
+
+  findButton.onclick = () => {
+    result.innerHTML = "";
+    metrics.innerHTML = "";
+
+    const split = original.value.split(findString.value);
+
+    highlightMatches(split, findString.value, result);
+
+    metrics.innerText = `Found ${split.length - 1} match(es)`;
+  }
+
+  replaceButton.onclick = () => {
+    // debugger;
+    result.innerHTML = "";
+    metrics.innerHTML = "";
+
+    const replaced = original.value.split(findString.value).join(replaceWith.value);
+
+    highlightMatches(replaced.split(replaceWith.value), replaceWith.value, result);
+
+    metrics.innerText = `Replaced ${original.value.split(findString.value).length - 1} match(es)`;
+  }
+
+  copy.onclick = () => {
+    navigator.clipboard.writeText(result.innerText);
+  }
+
+  original.value = "Hello";
+  findString.value = "l";
+  replaceWith.value = "x";
+}
+
 setupBase64Screen();
 setupTimestampScreen();
 setupCharacterCountScreen();
+setupFindReplaceScreen();
 navigate();

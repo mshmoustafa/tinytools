@@ -15,6 +15,7 @@
       <div class="app"><a href="#base64" id="navBase64">Base64 Decode and Encode</a></div>
       <div class="app"><a href="#timestamp" id="navTimestamp">Unix Epoch Timestamp Converter</a></div>
       <div class="app"><a href="#characterCount" id="navCharacterCount">Character and Line Count</a></div>
+      <div class="app"><a href="#findReplace" id="navFindReplace">Find and Replace in String</a></div>
     </div>
   </div>
   <div id="screenBase64" class="screen hidden">
@@ -35,6 +36,23 @@
     <div id="wordCountOutput"></div>
     <div id="lineCountOutput"></div>
     <div id="sizeCountOutput"></div>
+  </div>
+  <div id="screenFindReplace" class="screen hidden">
+    <textarea id="findReplaceOriginal"></textarea>
+    <div class="spacer"></div>
+    <div>Find:</div>
+    <input type="text" id="findReplaceFind" />
+    <div class="spacer"></div>
+    <div>Replace:</div>
+    <input type="text" id="findReplaceReplace" />
+    <div class="spacer"></div>
+    <button id="findReplaceFindButton">Find</button>
+    <button id="findReplaceReplaceButton">Replace</button>
+    <div class="spacer"></div>
+    <div id="findReplaceMetrics"></div>
+    <div id="findReplaceResult"></div>
+    
+    <button id="findReplaceCopyButton">Copy</button>
   </div>
   <script src="index.js"></script>
 </body>

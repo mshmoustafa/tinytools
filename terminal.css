@@ -47,3 +47,12 @@ input {
   color: #00ff00;
   font-family: monospace;
 }
+
+.match {
+  background-color: #00ff00;
+  color: black;
+}
+
+#findReplaceResult {
+  border: 1px solid #00ff00;
+}

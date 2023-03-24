@@ -1,8 +1,8 @@
-function parseCSV(csv) {
+function parseCSV(csv, delimiter) {
   const csvRows = csv
     .split("\n")
     .filter(row => row.trim() !== "")
-    .map(row => row + ",");
+    .map(row => row + delimiter);
 
   const parsed = [];
 
@@ -12,7 +12,7 @@ function parseCSV(csv) {
     let inQuotes = false;
     let deleteNextQuote = true;
     for (let character of row) {
-      if (character === "," && !inQuotes) {
+      if (character === delimiter && !inQuotes) {
         columns.push(column.trim());
         column = "";
         deleteNextQuote = true;

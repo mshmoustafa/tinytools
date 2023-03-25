@@ -18,7 +18,7 @@
       <div class="app"><a href="#timestamp" id="navTimestamp">Unix Epoch Timestamp Converter</a></div>
       <div class="app"><a href="#characterCount" id="navCharacterCount">Character and Line Count</a></div>
       <div class="app"><a href="#findReplace" id="navFindReplace">Find and Replace in String</a></div>
-      <div class="app"><a href="#jsonFormat" id="navJsonFormat">JSON Format (coming soon)</a></div>
+      <div class="app"><a href="#jsonFormat" id="navJsonFormat">JSON Format</a></div>
       <div class="app"><a href="#csvParse" id="navCsvParse">CSV Parser</a></div>
     </div>
   </div>
@@ -54,12 +54,16 @@
     <button id="findReplaceReplaceButton">Replace</button>
     <div class="spacer"></div>
     <div id="findReplaceMetrics"></div>
-    <div id="findReplaceResult"></div>
-    
+    <div id="findReplaceResult" class="pre"></div>
     <button id="findReplaceCopyButton">Copy</button>
   </div>
   <div id="screenJsonFormat" class="screen hidden">
-    <div>Coming soon</div>
+    <textarea id="jsonInput"></textarea>
+    <div class="spacer"></div>
+    <button id="jsonFormatButton">Parse</button>
+    <div class="spacer"></div>
+    <div id="formattedJson" class="pre"></div>
+    <button id="jsonFormatCopyButton">Copy</button>
   </div>
   <div id="screenCsvParse" class="screen hidden">
     <textarea id="csvInput"></textarea>

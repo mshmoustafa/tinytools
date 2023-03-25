@@ -117,7 +117,7 @@ input {
   padding: 0.25em;
 }
 
-#findReplaceResult {
+.pre {
   font-family: monospace;
   white-space: pre;
   padding: 0.1em;
@@ -125,7 +125,7 @@ input {
   overflow-x: scroll;
 }
 
-#findReplaceResult>* {
+.pre>* {
   padding: 0;
 }
 

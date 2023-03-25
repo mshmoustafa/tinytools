@@ -162,6 +162,25 @@ function setupFindReplaceScreen() {
   }
 }
 
+function setupJsonFormatScreen() {
+  const jsonInput = id("jsonInput");
+  const jsonFormatButton = id("jsonFormatButton");
+  const formattedJson = id("formattedJson");
+  const jsonFormatCopyButton = id("jsonFormatCopyButton");
+
+  jsonFormatButton.onclick = () => {
+    formattedJson.innerText = JSON.stringify(
+      JSON.parse(jsonInput.value),
+      null,
+      "    "
+    );
+  }
+
+  jsonFormatCopyButton.onclick = () => {
+    navigator.clipboard.writeText(formattedJson.innerText);
+  }
+}
+
 function setupCsvParseScreen() {
   const csvInput = id("csvInput");
   const csvParseButton = id("csvParseButton");
@@ -191,5 +210,6 @@ setupBase64Screen();
 setupTimestampScreen();
 setupCharacterCountScreen();
 setupFindReplaceScreen();
+setupJsonFormatScreen();
 setupCsvParseScreen();
 navigate();

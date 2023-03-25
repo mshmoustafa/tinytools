@@ -59,3 +59,11 @@ input {
 #findReplaceResult {
   border: 1px solid #00ff00;
 }
+
+table {
+  border: 1px solid #00ff00;
+}
+
+td, th {
+  border: 1px solid #00ff00;
+}

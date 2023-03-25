@@ -128,3 +128,11 @@ input {
 #findReplaceResult>* {
   padding: 0;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 10px 20px;
+}

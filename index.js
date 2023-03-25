@@ -7,7 +7,8 @@ const screens = {
   timestamp: id("screenTimestamp"),
   characterCount: id("screenCharacterCount"),
   findReplace: id("screenFindReplace"),
-  jsonFormat: id("screenJsonFormat")
+  jsonFormat: id("screenJsonFormat"),
+  csvParse: id("screenCsvParse")
 }
 
 function showScreen(screenToShow) {
@@ -161,8 +162,34 @@ function setupFindReplaceScreen() {
   }
 }
 
+function setupCsvParseScreen() {
+  const csvInput = id("csvInput");
+  const csvParseButton = id("csvParseButton");
+  const parsedCsvTable = id("parsedCsvTable");
+
+  csvParseButton.onclick = () => {
+    const csv = csvInput.value;
+    const parsedCsv = parseCSV(csv, ",");
+
+    const table = document.createElement("table");
+    for (let row of parsedCsv) {
+      const tr = document.createElement("tr");
+      for (let column of row) {
+        const td = document.createElement("td");
+        td.innerText = column;
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+    }
+
+    parsedCsvTable.innerHTML = null;
+    parsedCsvTable.appendChild(table);
+  }
+}
+
 setupBase64Screen();
 setupTimestampScreen();
 setupCharacterCountScreen();
 setupFindReplaceScreen();
+setupCsvParseScreen();
 navigate();

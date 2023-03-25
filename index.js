@@ -8,7 +8,10 @@ const screens = {
   characterCount: id("screenCharacterCount"),
   findReplace: id("screenFindReplace"),
   jsonFormat: id("screenJsonFormat"),
-  csvParse: id("screenCsvParse")
+  csvParse: id("screenCsvParse"),
+  urlEncoderDecoder: id("screenDateCalculator"),
+  dateCalculator: id("screenUrlEncoderDecoder"),
+  colorPicker: id("screenColorPicker"),
 }
 
 function showScreen(screenToShow) {
@@ -206,10 +209,27 @@ function setupCsvParseScreen() {
   }
 }
 
+function setupUrlEncoderDecoderScreen() {
+  // TODO
+  return;
+}
+
+function setupDateCalculatorScreen() {
+  // TODO
+  return;
+}
+
+function setupColorPickerScreen() {
+  // TODO
+  return;
+}
+
 setupBase64Screen();
 setupTimestampScreen();
 setupCharacterCountScreen();
 setupFindReplaceScreen();
 setupJsonFormatScreen();
 setupCsvParseScreen();
+setupUrlEncoderDecoderScreen();
+setupColorPickerScreen();
 navigate();
